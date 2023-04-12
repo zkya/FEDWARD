@@ -30,6 +30,7 @@ def agg_des():
     parser.add_argument('-λ', '--λ', type=float, default=0.0001, help='λ')
     parser.add_argument('-v', '--vote', type=bool, default=False, help="Whether to use voting")
     args = parser.parse_args()
+    args = args.__dict__  
     return  args
 
 
@@ -58,4 +59,5 @@ def agg_flame():
     parser.add_argument('-noise', '--noise', type=bool, default=True)
     parser.add_argument('-λ', '--λ', type=float, default=0.0001, help='λ')
     args = parser.parse_args()
+    args = args.__dict__  
     return  args
