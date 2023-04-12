@@ -52,20 +52,20 @@ def sample_dirichlet_train_data(classes_dict, no_participants, alpha=0.5):
 def get_dataset(name):
     train_dataset, test_dataset = [], []
     if name == 'MNIST':
-        train_dataset = datasets.MNIST('../datasets', train=True, download=True, transform=transforms.Compose([
+        train_dataset = datasets.MNIST('./datasets', train=True, download=True, transform=transforms.Compose([
             transforms.ToTensor(),
             # transforms.Normalize((0.1307,), (0.3081,))
         ]))
-        test_dataset = datasets.MNIST('../datasets', train=False, transform=transforms.Compose([
+        test_dataset = datasets.MNIST('./datasets', train=False, transform=transforms.Compose([
             transforms.ToTensor(),
             # transforms.Normalize((0.1307,), (0.3081,))
         ]))
     elif name == 'FASHION':
-        train_dataset = datasets.FashionMNIST('../datasets', train=True, download=True, transform=transforms.Compose([
+        train_dataset = datasets.FashionMNIST('./datasets', train=True, download=True, transform=transforms.Compose([
             transforms.ToTensor(),
             # transforms.Normalize((0.1307,), (0.3081,))
         ]))
-        test_dataset = datasets.FashionMNIST('../datasets', train=False, transform=transforms.Compose([
+        test_dataset = datasets.FashionMNIST('./datasets', train=False, transform=transforms.Compose([
             transforms.ToTensor(),
             # transforms.Normalize((0.1307,), (0.3081,))
         ]))
@@ -83,8 +83,8 @@ def get_dataset(name):
             # transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
         ])
 
-        train_dataset = datasets.CIFAR10('../datasets', train=True, download=True, transform=transform_train)
-        test_dataset = datasets.CIFAR10('../datasets', train=False, transform=transform_test)
+        train_dataset = datasets.CIFAR10('./datasets', train=True, download=True, transform=transform_train)
+        test_dataset = datasets.CIFAR10('./datasets', train=False, transform=transform_test)
     elif name == 'TINY':
         _data_transforms = {
             'train': transforms.Compose([
@@ -97,7 +97,7 @@ def get_dataset(name):
                 transforms.ToTensor(),
             ]),
         }
-        _data_dir = '../datasets/tiny-imagenet-200/'
+        _data_dir = './datasets/tiny-imagenet-200/'
         train_dataset = datasets.ImageFolder(os.path.join(_data_dir, 'train'),
                                              _data_transforms['train'])
         test_dataset = datasets.ImageFolder(os.path.join(_data_dir, 'val'),
