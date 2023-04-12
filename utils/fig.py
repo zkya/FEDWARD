@@ -329,26 +329,3 @@ def draw_single(file_path, save_path, title):
     plt.legend()
     plt.savefig(save_path)
     print(f"the result draw in {save_path}")
-
-
-if __name__ == '__main__':
-    # file_name = 'tmp/eflame/MNIST-2022-08-14 21_26_37-posion_rate(0.078125).pth'
-    # save_path = 'img/com/eflame/MNIST-2022-08-14 21_26_37-posion_rate(0.078125).png'
-    # title = 'MNIST-2022-08-14 21_26_37-posion_rate(0.078125)'
-    # draw3(file_name, save_path, title, start_attack=20, scheme="eflame")
-
-    # file_path = "tmp/pretrain/CIFAR_acc.pth"
-    # save_path = "img/pretrain/CIFAR_acc_resnet.png"
-    # title = "CIFAR_acc_resnet"
-    # draw_single(file_path, save_path, title)
-    # draw_mnist()
-    # draw_two()
-    #aa = torch.load('tmp/daguard/CIFAR/0.25-ternGrad-CIFAR-2022-12-13 23_55_18-4-posion_rate(0.46875).pth')
-    name = '/0.25-ternGrad-FASHION-2022-12-17 13_06_59-4-posion_rate(0.3125).pth'
-    flame = 'tmp/flame_result/'
-    dagurad = 'tmp/daguard/'
-    dataset = 'FASHION'
-    aa = torch.load(dagurad + dataset + name)
-    lst = aa[1][0][10:]
-    print("aa", sum(lst)/len(lst))
-    # draw_fashion()
